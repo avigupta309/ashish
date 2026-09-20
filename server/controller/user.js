@@ -4,7 +4,7 @@ export async function userRegister(req, res) {
   const { fullName, email, address, roll } = req.body;
   console.log(req.body);
   try {
-    userModel.create({
+    await userModel.create({
       fullName,
       email,
       address,
@@ -12,6 +12,7 @@ export async function userRegister(req, res) {
     });
     return res.status(201).json({ data: "Added Sucessfully" });
   } catch (error) {
-    return res.status(401).json({ data: "Cannot Added Data" });
+    console.log(error.message);
+    return res.status(404).json({ data: "Cannot Added Data" });
   }
 }

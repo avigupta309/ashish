@@ -8,7 +8,6 @@ export const Table = ({ user }: TableProps) => {
   return (
     <div className="table-container">
       <h1>User</h1>
-
       <table>
         <thead>
           <tr>

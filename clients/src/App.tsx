@@ -12,9 +12,10 @@ function App() {
   const onSubmit = async (data: userProps) => {
     console.log(data);
     try {
-      const response = await axios.post("http://localhost:3000/api/user", {
+      const response = await axios.post(
+        "http://localhost:3000/api/user/register",
         data,
-      });
+      );
       console.log(response.data);
     } catch (error) {
       console.log("Data Cannot Added To DataBase");
